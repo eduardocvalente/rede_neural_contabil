@@ -27,7 +27,7 @@ Este projeto implementa uma solução de classificação contábil automatizada 
 ### Passos:
 1. Clone este repositório para o seu ambiente local:
    ```bash
-   git clone https://github.com/seu_usuario/seu_projeto.git
+   git clone https://github.com/eduardocvalente/rede_neural_contabil
    ```
 
 2. Acesse o diretório do projeto:
