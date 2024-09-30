@@ -1,0 +1,162 @@
+/* navbar.css */
+
+/* Reset básico para remover estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /*padding-top: 80px;  Ajuste este valor conforme a altura do seu navbar */
+}
+
+/* Estilos do Navbar */
+.navbar {
+    width: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Menu Toggle (Hamburger) */
+.navbar-toggle-checkbox {
+    display: none;
+}
+
+.navbar-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.navbar-toggle-label .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    margin-left: 25px;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.navbar-link i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .navbar-toggle-label {
+        display: flex;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .navbar-toggle-checkbox:checked ~ .navbar-menu {
+        max-height: 500px; /* Altura máxima quando o menu está aberto */
+    }
+
+    .navbar-item {
+        margin: 20px 0;
+    }
+
+    .navbar-link {
+        font-size: 20px;
+    }
+}
+
+/* Ícones Hover Animation */
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700; /* Dourado */
+    transition: width 0.3s;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    width: 100%;
+}
+

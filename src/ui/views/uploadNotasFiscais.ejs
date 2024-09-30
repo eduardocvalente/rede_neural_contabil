@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('partials/head', { title: 'Upload e Reclassificação de Notas Fiscais', stylesheet: 'uploadNotasFiscais', script: 'uploadNotasFiscais' }) %>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <!-- Área de Feedback (fora do container para evitar interferência na rolagem) -->
+        <div id="feedbackMessages"></div>
+
+        <div class="container">
+            <h1>Upload e Reclassificação de Notas Fiscais</h1>
+
+            <div class="form-container">
+                <label for="xmlFiles" class="file-input-label"><i class="fas fa-upload"></i> Escolher Arquivos XML</label>
+                <input type="file" id="xmlFiles" class="file-input" name="xmlFiles" multiple accept=".xml" onchange="displaySelectedFiles()">
+                <div id="fileList" class="file-list">
+                    <!-- Lista de arquivos será exibida aqui -->
+                </div>
+                <button class="submit-btn" onclick="uploadFiles()"><i class="fas fa-paper-plane"></i> Enviar Arquivos</button>
+            </div>
+
+            <!-- Botão para Exportar as Notas Fiscais para Excel -->
+            <!-- Este botão será exibido dinamicamente após o processamento dos arquivos -->
+
+            <div class="output-section">
+                <div class="output-header">
+                    <h2>Notas Fiscais Processadas</h2>
+                    <div class="toggle-all-buttons" id="toggleAllButtons" style="display: none;">
+                        <button class="export-btn" onclick="exportToExcel()">
+                            <i class="fas fa-file-excel"></i> Exportar para Excel
+                        </button>
+                        <button class="minimize-btn" onclick="minimizeAllNotas()" title="Minimizar Todos os Arquivos XML">
+                            <i class="fas fa-minus-circle"></i> Minimizar
+                        </button>
+                        <button class="maximize-btn" onclick="maximizeAllNotas()" title="Maximizar Todos os Arquivos XML">
+                            <i class="fas fa-plus-circle"></i> Maximizar
+                        </button>
+                    </div>
+                </div>
+                <div id="processed-output">
+                    <!-- Notas fiscais processadas serão exibidas aqui -->
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>Notas Fiscais Não Processadas</h2>
+                <div id="unprocessed-output" class="no-notes">
+                    <!-- Notas fiscais não processadas serão exibidas aqui -->
+                </div>
+            </div>
+
+            <!-- Tela de Carregamento Principal -->
+            <div class="loading" id="loading">
+                <div></div>
+            </div>
+
+            <!-- Modal para Reclassificação -->
+            <div id="reclassificationModal">
+
+                <!-- Overlay de carregamento dentro do modal -->
+                <div id="modalLoading">
+                    <div class="spinner"></div>
+                </div>
+
+                <!-- Título do Modal -->
+                <h2>Feedback Conta Contábil</h2>
+
+                <!-- Informações do Produto e Contas Atuais -->
+                <div class="modal-content">
+                    <p><strong>Produto:</strong> <span id="modalProduto" style="color: #333;"></span></p>
+                    <p><strong>Conta Débito Atual:</strong> <span id="modalContaDebito" style="color: #333;"></span></p>
+                    <p><strong>Conta Crédito Atual:</strong> <span id="modalContaCredito" style="color: #333;"></span></p>
+                    <p><strong>NCM:</strong> <span id="modalNCM" style="color: #333;"></span></p>
+                    <p><strong>CNAE Emitente:</strong> <span id="modalCNAEEmitente" style="color: #333;"></span></p>
+                    <p><strong>CNAE Destinatário:</strong> <span id="modalCNAEDestinatario" style="color: #333;"></span></p>
+                </div>
+
+                <!-- Seção de Reclassificação - Oculta por padrão -->
+                <div id="reclassifySection" style="display: none; animation: fadeIn 0.5s ease;">
+                    <label for="newDebitAccount">Nova Conta Débito:</label>
+                    <select id="newDebitAccount" class="searchable-select">
+                        <!-- Opções de contas de débito serão carregadas aqui -->
+                    </select>
+
+                    <label for="newCreditAccount">Nova Conta Crédito:</label>
+                    <select id="newCreditAccount" class="searchable-select">
+                        <!-- Opções de contas de crédito serão carregadas aqui -->
+                    </select>
+
+                    <br></br>
+                    <button onclick="submitReclassification()" class="submit-reclassification"><i class="fas fa-paper-plane"></i> Enviar Reclassificação</button>
+                </div>
+
+                <!-- Menu de Feedback -->
+                <div class="feedback-menu" id="feedbackMenu">
+                    <button class="menu-btn" id="feedbackButton" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i> Feedback
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="menu-content" id="feedbackMenuContent" role="menu" aria-labelledby="feedbackButton">
+                        <button onclick="giveFeedback(true)" class="menu-item correto" role="menuitem"><i class="fas fa-check-circle"></i> Correto</button>
+                        <button onclick="showReclassification()" class="menu-item incorreto" role="menuitem"><i class="fas fa-times-circle"></i> Incorreto</button>
+                    </div>
+                </div>
+
+                <!-- Botão de Fechar -->
+                <br></br>
+                <button onclick="closeReclassificationModal()" class="close-modal"><i class="fas fa-times"></i> Fechar</button>
+            </div>
+        </div>
+
+        <%- include('partials/foot', { script: 'uploadNotasFiscais' }) %>
+    </html>

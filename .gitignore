@@ -1,0 +1,14 @@
+# Ignore todos os arquivos .js
+*.js
+
+# Não ignore os arquivos .js dentro de src/ui/public/js
+!src/ui/public/js/**/*.js
+
+# Ignore outras pastas específicas, se necessário
+node_modules/
+dist/
+build/
+out/
+logs/
+*.log
+.env

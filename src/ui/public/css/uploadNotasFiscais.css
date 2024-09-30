@@ -1,0 +1,611 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #0d6efd;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.file-input-label {
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.file-input-label:hover {
+    background-color: #0056b3;
+}
+
+.file-input {
+    display: none;
+}
+
+.submit-btn {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.output-section {
+    margin-top: 40px;
+}
+
+.output-section h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.nfe-container,
+.nfe-container-invalid {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #f9f9f9;
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+.nfe-container:hover,
+.nfe-container-invalid:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nfe-header {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.nfe-item {
+    margin-bottom: 15px;
+}
+
+.nfe-sub-container {
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+.nfe-sub-container.reclassificado {
+    background-color: #e8f5e9;
+    border-color: #c8e6c9;
+}
+
+.toggle-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.nfe-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Menu de Feedback */
+.feedback-menu {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #1E88E5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.menu-btn:hover,
+.menu-btn.active {
+    background-color: #1669bb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1;
+    top: 50px;
+    left: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Classe para exibir o menu */
+.menu-content.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilo para os itens do menu */
+.menu-content .menu-item {
+    width: 100%;
+    padding: 12px 16px;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.menu-content .menu-item:hover {
+    background-color: #e0e0e0;
+}
+
+.menu-content .menu-item.correto {
+    color: #4CAF50;
+}
+
+.menu-content .menu-item.incorreto {
+    color: #E53935;
+}
+
+/* Botão de Feedback */
+.btn-feedback {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.btn-feedback:hover {
+    background-color: #0056b3;
+}
+
+.btn-feedback.disabled {
+    background-color: #c62828;
+    cursor: not-allowed;
+}
+
+.btn-feedback.disabled:hover {
+    background-color: #c62828;
+}
+
+.btn-feedback i {
+    margin-right: 6px;
+}
+
+.file-list-item {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.file-list-item:hover {
+    background-color: #e0e0e0;
+}
+
+.file-list-item button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.file-list-item button:hover {
+    background-color: #c82333;
+}
+
+/* Ajuste do z-index para o loading overlay */
+.loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10002; /* Ajustado para estar acima do modal e das mensagens de feedback */
+    justify-content: center;
+    align-items: center;
+}
+
+.loading div {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #fff;
+    border-top-color: #007BFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.no-notes {
+    text-align: center;
+    font-size: 20px;
+    color: #888;
+}
+
+/* Modal styling */
+#reclassificationModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 90%;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease-in-out;
+    overflow: visible;
+}
+
+.select2-container--open {
+    z-index: 10500 !important;
+    /* Valor maior que o z-index do modal */
+}
+
+.select2-dropdown {
+    z-index: 10500 !important;
+    /* Valor maior que o z-index do modal */
+}
+
+#reclassificationModal h2 {
+    text-align: center;
+    color: #1E88E5;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+#reclassificationModal .modal-content {
+    margin-bottom: 25px;
+    background-color: #f0f0f0;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+#reclassificationModal p {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#reclassificationModal label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+}
+
+#reclassificationModal select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#reclassificationModal select:focus {
+    border-color: #1E88E5;
+    outline: none;
+}
+
+#reclassificationModal .submit-reclassification {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reclassificationModal .submit-reclassification:hover {
+    background-color: #45a049;
+}
+
+#reclassificationModal .close-modal {
+    background-color: #1E88E5;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reclassificationModal .close-modal:hover {
+    background-color: #1669bb;
+}
+
+/* Loading overlay inside modal */
+#modalLoading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10001; /* Deve ser maior que o z-index do conteúdo do modal */
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#modalLoading div {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #007BFF;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+#modalLoading .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #007BFF;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Feedback message styling */
+#feedbackMessages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    z-index: 10001;
+}
+
+.feedback-message {
+    background-color: #e0f7fa;
+    color: #00695c;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-left: 6px solid #007BFF;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+}
+
+.feedback-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left-color: #e53935;
+}
+
+.feedback-message i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Novo estilo para o header das notas processadas */
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os botões dentro de toggle-all-buttons */
+.toggle-all-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-all-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-all-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+/* Estilo específico para cada botão */
+.toggle-all-buttons .export-btn {
+    background-color: #28a745;
+    /* Verde */
+}
+
+.toggle-all-buttons .export-btn:hover {
+    background-color: #218838;
+}
+
+.toggle-all-buttons .minimize-btn {
+    background-color: #6c757d;
+    /* Cinza */
+}
+
+.toggle-all-buttons .minimize-btn:hover {
+    background-color: #5a6268;
+}
+
+.toggle-all-buttons .maximize-btn {
+    background-color: #1E88E5;
+    /* Azul */
+}
+
+.toggle-all-buttons .maximize-btn:hover {
+    background-color: #1669bb;
+}
+
+/* Espaçamento e alinhamento dos ícones */
+.toggle-all-buttons button i {
+    margin-right: 6px;
+}
+
+/* Marcação de itens reclassificados */
+.reclassificado {
+    background-color: #e8f5e9 !important;
+    border-color: #c8e6c9 !important;
+}
+
+/* Animação de entrada para a seção de reclassificação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilização para links desabilitados */
+.link-reclassificacao.disabled {
+    color: #c62828;
+    pointer-events: none;
+    cursor: not-allowed;
+    text-decoration: none;
+}

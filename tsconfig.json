@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                          // Atualizado para ES2020 para aproveitar recursos mais modernos
+    "module": "commonjs",                        // CommonJS é o padrão para Node.js, mas você pode mudar para ESNext se usar módulos ESM
+    "moduleResolution": "node",                  // Resolução de módulos do Node.js
+    "strict": true,                              // Ativa todas as verificações estritas do TypeScript
+    "noImplicitAny": true,                       // Não permite o uso de `any` implícito
+    "strictNullChecks": true,                    // Verifica null e undefined de forma mais rigorosa
+    "strictPropertyInitialization": true,        // Garante que as propriedades sejam inicializadas corretamente
+    "noImplicitReturns": true,                   // Verifica se todas as funções retornam valores explicitamente
+    "noImplicitThis": true,                      // Verifica o uso correto de `this`
+    "esModuleInterop": true,                     // Para compatibilidade com módulos CommonJS e ES Modules
+    "allowSyntheticDefaultImports": true,        // Permite importações padrão de módulos sem padrão
+    "emitDecoratorMetadata": true,               // Necessário para usar `reflect-metadata` e decorators
+    "experimentalDecorators": true,              // Habilita o uso de decorators no TypeScript
+    "skipLibCheck": true,                        // Pula a verificação de tipos das bibliotecas no `node_modules`
+    "sourceMap": true,                           // Gera mapas de código-fonte para depuração
+    "outDir": "./dist",                          // Diretório onde serão gerados os arquivos compilados
+    "rootDir": "./src",                          // Diretório raiz do código fonte
+    "baseUrl": "./",                             // Base para resolução de módulos
+    "paths": {
+      "*": ["node_modules/*"]                    // Define caminho para resolução dos módulos
+    }
+  },
+  "include": ["src/**/*"],                       // Inclui todos os arquivos da pasta `src`
+  "exclude": ["node_modules", "dist"]            // Exclui `node_modules` e `dist` da compilação
+}

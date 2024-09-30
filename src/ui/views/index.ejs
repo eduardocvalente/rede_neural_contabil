@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('partials/head', { title: 'Classificação de Contas Contábeis', stylesheet: 'index', script: 'index' }) %>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="container">
+            <h1 class="text-center mb-4 mt-4">Classificação de Contas Contábeis</h1>
+
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="cnaePrincipal">CNAE Principal:</label>
+                    <select id="cnaePrincipal" class="form-control searchable-select">
+                        <!-- CNAE Principal será carregado via AJAX -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cnaeEntrada">CNAE de Entrada:</label>
+                    <select id="cnaeEntrada" class="form-control searchable-select">
+                        <!-- CNAE de Entrada será carregado via AJAX -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ncmItem">NCM do Item:</label>
+                    <select id="ncmItem" class="form-control searchable-select">
+                        <!-- NCM do Item será carregado via AJAX -->
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-block mt-4" onclick="classify()">Classificar Conta Contábil</button>
+            </div>
+
+            <div class="output-section mt-5">
+                <h2 class="text-center">Contas Contábeis Sugeridas:</h2>
+                <div id="output" class="output-content mt-4">
+                    <!-- Resultado da classificação aparecerá aqui -->
+                </div>
+                <div class="feedback-buttons mt-4 text-center" style="display: none;">
+                    <button class="btn btn-success mr-2" onclick="giveFeedback(true)">Correto</button>
+                    <button class="btn btn-danger" onclick="giveFeedback(false)">Incorreto</button>
+                </div>
+                <div id="message" class="mt-3 text-center" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Modal para Feedback -->
+        <div class="modal fade" id="feedback-modal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="feedbackModalLabel">Reclassifique as Contas Contábeis</h5>
+                        <button type="button" class="close" onclick="closeModal()" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="reclassification-section">
+                            <div class="form-group">
+                                <label for="reclassifyDebitSelect">Selecione a conta de débito correta:</label>
+                                <select id="reclassifyDebitSelect" class="form-control searchable-select">
+                                    <!-- Opções de contas serão carregadas via AJAX -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reclassifyCreditSelect">Selecione a conta de crédito correta:</label>
+                                <select id="reclassifyCreditSelect" class="form-control searchable-select">
+                                    <!-- Opções de contas serão carregadas via AJAX -->
+                                </select>
+                            </div>
+                            <button class="btn btn-primary btn-block" onclick="submitReclassification()">Reclassificar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer text-center mt-5 mb-3">
+            <p>Desenvolvido por Eduardo Costa Valente - 2024</p>
+        </div>
+
+        <%- include('partials/foot', { script: 'index' }) %>
+    </body>
+</html>

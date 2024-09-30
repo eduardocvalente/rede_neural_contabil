@@ -1,0 +1,62 @@
+# Projeto de Classificação Contábil Usando Redes Neurais
+
+## Descrição do Projeto
+Este projeto implementa uma solução de classificação contábil automatizada utilizando redes neurais artificiais. O objetivo é facilitar a classificação correta de contas contábeis com base nos códigos CNAE e NCM, fornecendo sugestões automatizadas e permitindo feedback do usuário para ajustes e reclassificação.
+
+## Tecnologias Utilizadas
+- **Node.js**: Framework de backend usado para construir a API e a lógica de negócio.
+- **Express.js**: Biblioteca usada para gerenciar rotas e requests HTTP.
+- **tensorflow/tfjs-node**: Biblioteca JavaScript para redes neurais.
+- **Select2**: Plugin jQuery para melhorar as interações de dropdown.
+- **HTML/CSS**: Para a criação de páginas web e design responsivo.
+- **JavaScript (ES6)**: Usado em todo o projeto para manipulação de dados, DOM e backend.
+
+## Funcionalidades
+1. **Classificação Automática**: O usuário pode fornecer códigos CNAE e NCM e o sistema sugere a classificação contábil.
+2. **Reclassificação Manual**: Caso a classificação não seja adequada, o usuário pode fornecer feedback e reclassificar manualmente as contas de débito e crédito.
+3. **Upload de Notas Fiscais**: O sistema permite o upload de arquivos XML de notas fiscais para processamento e classificação automática.
+4. **Exportação de Dados**: As notas fiscais processadas podem ser exportadas para o formato Excel para análise futura.
+5. **Feedback Automatizado**: O usuário pode fornecer feedback sobre a correção das classificações para aprimorar o modelo de rede neural.
+6. **Sistema de Modal e Loading**: Utiliza modais para permitir reclassificação sem recarregar a página e exibe animações de carregamento para melhorar a experiência do usuário.
+
+## Como Rodar o Projeto
+### Pré-requisitos:
+1. **Node.js**: Certifique-se de que o Node.js está instalado em seu sistema.
+2. **NPM**: O gerenciador de pacotes do Node.js (NPM) também deve estar disponível.
+
+### Passos:
+1. Clone este repositório para o seu ambiente local:
+   ```bash
+   git clone https://github.com/seu_usuario/seu_projeto.git
+   ```
+
+2. Acesse o diretório do projeto:
+   ```bash
+   cd seu_projeto
+   ```
+
+3. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor:
+   ```bash
+   npm start
+   ```
+
+5. Acesse o projeto através do navegador no endereço `http://localhost:3000`.
+
+## Estrutura do Projeto
+- **/public**: Contém os arquivos estáticos como CSS, imagens e JavaScript frontend.
+- **/routes**: Definição das rotas da aplicação.
+- **/views**: Arquivos EJS usados para renderizar as páginas HTML.
+- **/controllers**: Lógica principal do backend para manipulação de dados e interações com a rede neural.
+- **/models**: Modelos usados para processar e validar os dados.
+- **/scripts**: Scripts para processamento de redes neurais e classificação automática.
+
+## Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
+
+## Licença
+Este projeto está licenciado sob a licença MIT.

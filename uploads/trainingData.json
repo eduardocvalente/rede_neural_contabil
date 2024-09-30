@@ -1,0 +1,24 @@
+[
+  {
+    "input": {
+      "cnaePrincipal": "0111-3/01",
+      "cnaeEntrada": "0111-3/02",
+      "ncm": "0101.21.00"
+    },
+    "output": {
+      "contaDebito_1.1.1.01": 1,
+      "contaCredito_2.1.1.01": 1
+    }
+  },
+  {
+    "input": {
+      "cnaePrincipal": "0112-1/01",
+      "cnaeEntrada": "0112-1/02",
+      "ncm": "0101.29.00"
+    },
+    "output": {
+      "contaDebito_1.1.1.01": 1,
+      "contaCredito_2.1.1.01": 1
+    }
+  }
+]

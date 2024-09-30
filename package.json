@@ -1,0 +1,58 @@
+{
+  "name": "rede_neural_contabil_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "format": "prettier --write 'src/**/*.ts'",
+    "start": "sucrase-node src/app.ts",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardocvalente/rede_neural_contabil_typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardocvalente/rede_neural_contabil_typescript/issues"
+  },
+  "homepage": "https://github.com/eduardocvalente/rede_neural_contabil_typescript#readme",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inversify": "^2.0.32",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.5.5",
+    "@types/unzipper": "^0.10.10",
+    "@types/xml2js": "^0.4.14",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-vue": "^9.28.0",
+    "prettier": "^3.3.3",
+    "sucrase": "^3.35.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@automapper/classes": "^8.8.1",
+    "@automapper/core": "^8.8.1",
+    "@tensorflow/tfjs": "^4.21.0",
+    "@tensorflow/tfjs-node": "^4.21.0",
+    "@xenova/transformers": "^2.17.2",
+    "axios": "^1.7.7",
+    "bottleneck": "^2.19.5",
+    "inversify": "^6.0.2",
+    "inversify-binding-decorators": "^4.0.0",
+    "reflect-metadata": "^0.1.14",
+    "ts-node": "^10.9.2",
+    "unzipper": "^0.12.3"
+  }
+}

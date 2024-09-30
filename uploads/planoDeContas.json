@@ -1,0 +1,556 @@
+{
+  "PlanoDeContas": [
+    {
+      "codigo": "1",
+      "descricao": "Ativo (testando 01)",
+      "nivel": "1",
+      "subcontas": [
+        {
+          "codigo": "1.1",
+          "descricao": "Ativo Circulante (testando 01)",
+          "nivel": "2",
+          "subcontas": [
+            {
+              "codigo": "1.1.1",
+              "descricao": "Caixa e Equivalentes de Caixa",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "1.1.1.01",
+                  "descricao": "Caixa",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.1.1.01.001",
+                      "descricao": "Dinheiro em Caixa",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "1.1.1.02",
+                  "descricao": "Bancos",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.1.1.02.001",
+                      "descricao": "Conta Corrente",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "1.1.1.02.002",
+                      "descricao": "Aplicações Financeiras de Liquidez Imediata",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "codigo": "1.1.2",
+              "descricao": "Clientes",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "1.1.2.01",
+                  "descricao": "Clientes no País",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.1.2.01.001",
+                      "descricao": "Clientes Nacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "1.1.2.02",
+                  "descricao": "Clientes no Exterior",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.1.2.02.001",
+                      "descricao": "Clientes Internacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo": "1.2",
+          "descricao": "Ativo Não Circulante (testando 01)",
+          "nivel": "2",
+          "subcontas": [
+            {
+              "codigo": "1.2.1",
+              "descricao": "Investimentos",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "1.2.1.01",
+                  "descricao": "Participações Societárias",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.2.1.01.001",
+                      "descricao": "Participações em Controladas",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "1.2.1.01.002",
+                      "descricao": "Participações em Coligadas",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "codigo": "1.2.2",
+              "descricao": "Imobilizado",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "1.2.2.01",
+                  "descricao": "Bens Imóveis",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.2.2.01.001",
+                      "descricao": "Terrenos",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "1.2.2.01.002",
+                      "descricao": "Edificações",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "1.2.2.02",
+                  "descricao": "Bens Móveis",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "1.2.2.02.001",
+                      "descricao": "Máquinas e Equipamentos",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "1.2.2.02.002",
+                      "descricao": "Móveis e Utensílios",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "2",
+      "descricao": "Passivo",
+      "nivel": 1,
+      "subcontas": [
+        {
+          "codigo": "2.1",
+          "descricao": "Passivo Circulante",
+          "nivel": 2,
+          "subcontas": [
+            {
+              "codigo": "2.1.1",
+              "descricao": "Fornecedores",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "2.1.1.01",
+                  "descricao": "Fornecedores Nacionais",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "2.1.1.01.001",
+                      "descricao": "Fornecedores de Matéria-Prima",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "2.1.1.01.002",
+                      "descricao": "Fornecedores de Serviços",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "2.1.1.02",
+                  "descricao": "Fornecedores Estrangeiros",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "2.1.1.02.001",
+                      "descricao": "Fornecedores Internacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "codigo": "2.1.2",
+              "descricao": "Obrigações Sociais e Trabalhistas",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "2.1.2.01",
+                  "descricao": "Salários a Pagar",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "2.1.2.01.001",
+                      "descricao": "Salários e Ordenados",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "2.1.2.02",
+                  "descricao": "Encargos Sociais a Recolher",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "2.1.2.02.001",
+                      "descricao": "INSS a Recolher",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "2.1.2.02.002",
+                      "descricao": "FGTS a Recolher",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo": "2.2",
+          "descricao": "Passivo Não Circulante",
+          "nivel": 2,
+          "subcontas": [
+            {
+              "codigo": "2.2.1",
+              "descricao": "Empréstimos de Longo Prazo",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "2.2.1.01",
+                  "descricao": "Empréstimos Bancários",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "2.2.1.01.001",
+                      "descricao": "Empréstimos Nacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "2.2.1.01.002",
+                      "descricao": "Empréstimos Internacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "codigo": "2.2.2",
+              "descricao": "Provisões",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "2.2.2.01",
+                  "descricao": "Provisões para Contingências",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "2.2.2.01.001",
+                      "descricao": "Provisão para Contingências Trabalhistas",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "2.2.2.01.002",
+                      "descricao": "Provisão para Contingências Fiscais",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "3",
+      "descricao": "Patrimônio Líquido",
+      "nivel": 1,
+      "subcontas": [
+        {
+          "codigo": "3.1",
+          "descricao": "Capital Social",
+          "nivel": 2,
+          "subcontas": [
+            {
+              "codigo": "3.1.1",
+              "descricao": "Capital Subscrito",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "3.1.1.01",
+                  "descricao": "Capital a Integralizar",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "3.1.1.01.001",
+                      "descricao": "Capital Nacional",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "3.1.1.01.002",
+                      "descricao": "Capital Estrangeiro",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo": "3.2",
+          "descricao": "Reservas de Lucros",
+          "nivel": 2,
+          "subcontas": [
+            {
+              "codigo": "3.2.1",
+              "descricao": "Reservas Estatutárias",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "3.2.1.01",
+                  "descricao": "Reserva Legal",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "3.2.1.01.001",
+                      "descricao": "Reserva para Investimentos",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "4",
+      "descricao": "Receitas",
+      "nivel": 1,
+      "subcontas": [
+        {
+          "codigo": "4.1",
+          "descricao": "Receitas Operacionais",
+          "nivel": 2,
+          "subcontas": [
+            {
+              "codigo": "4.1.1",
+              "descricao": "Receitas de Vendas",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "4.1.1.01",
+                  "descricao": "Vendas de Mercadorias",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "4.1.1.01.001",
+                      "descricao": "Vendas no Mercado Interno",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "4.1.1.01.002",
+                      "descricao": "Vendas no Mercado Externo",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "codigo": "4.1.2",
+              "descricao": "Receitas de Serviços",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "4.1.2.01",
+                  "descricao": "Prestação de Serviços",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "4.1.2.01.001",
+                      "descricao": "Serviços Nacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "4.1.2.01.002",
+                      "descricao": "Serviços Internacionais",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "5",
+      "descricao": "Despesas",
+      "nivel": 1,
+      "subcontas": [
+        {
+          "codigo": "5.1",
+          "descricao": "Despesas Operacionais",
+          "nivel": 2,
+          "subcontas": [
+            {
+              "codigo": "5.1.1",
+              "descricao": "Despesas Administrativas",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "5.1.1.01",
+                  "descricao": "Salários e Benefícios",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "5.1.1.01.001",
+                      "descricao": "Salários",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "5.1.1.01.002",
+                      "descricao": "Benefícios",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "5.1.1.02",
+                  "descricao": "Despesas com Serviços",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "5.1.1.02.001",
+                      "descricao": "Serviços de Consultoria",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "5.1.1.02.002",
+                      "descricao": "Serviços de Terceiros",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "codigo": "5.1.2",
+              "descricao": "Despesas Comerciais",
+              "nivel": 3,
+              "subcontas": [
+                {
+                  "codigo": "5.1.2.01",
+                  "descricao": "Despesas com Marketing",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "5.1.2.01.001",
+                      "descricao": "Publicidade e Propaganda",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "5.1.2.01.002",
+                      "descricao": "Promoções",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                },
+                {
+                  "codigo": "5.1.2.02",
+                  "descricao": "Despesas com Transporte",
+                  "nivel": 4,
+                  "subcontas": [
+                    {
+                      "codigo": "5.1.2.02.001",
+                      "descricao": "Fretes e Carretos",
+                      "nivel": 5,
+                      "subcontas": []
+                    },
+                    {
+                      "codigo": "5.1.2.02.002",
+                      "descricao": "Transporte de Funcionários",
+                      "nivel": 5,
+                      "subcontas": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
